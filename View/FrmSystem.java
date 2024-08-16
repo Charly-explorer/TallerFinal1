@@ -7,6 +7,7 @@ package View;
 import Listas.HashSetMecanicos;
 import Listas.ListaClientes;
 import Listas.ArrayListVehicle;
+import Listas.QueueRepair;
 
 /**
  *
@@ -53,7 +54,7 @@ public class FrmSystem extends javax.swing.JFrame {
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
+            .addGap(0, 732, Short.MAX_VALUE)
         );
 
         jToolBar1.setRollover(true);
@@ -104,7 +105,8 @@ public class FrmSystem extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDesktopPane1))
+                .addComponent(jDesktopPane1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -122,18 +124,22 @@ public class FrmSystem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtnReparationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnReparationsActionPerformed
-        // TODO add your handling code here:
+       FrmReparations newframeReparations= new FrmReparations();
+       newframeReparations.setVisible(true);
+       this.jDesktopPane1.add(newframeReparations);
     }//GEN-LAST:event_BtnReparationsActionPerformed
     
     private void BtnVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVehiculosActionPerformed
-        FrmVehicles newframe= new FrmVehicles();
-        newframe.setVisible(true);
-        this.jDesktopPane1.add(newframe);
+       // FrmVehicles newframe= new FrmVehicles();
+//        newframe.setVisible(true);
+//        this.jDesktopPane1.add(newframe);
        
     }//GEN-LAST:event_BtnVehiculosActionPerformed
 
     private void BtnClientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnClientsActionPerformed
-        // TODO add your handling code here:
+       FrmClients newframeClients= new FrmClients();
+       newframeClients.setVisible(true);
+       this.jDesktopPane1.add(newframeClients);
     }//GEN-LAST:event_BtnClientsActionPerformed
 
     private void BtnMechanicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMechanicsActionPerformed

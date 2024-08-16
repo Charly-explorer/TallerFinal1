@@ -8,12 +8,12 @@ package View;
  *
  * @author Student
  */
-public class Clients extends javax.swing.JInternalFrame {
+public class FrmClients extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Clients
      */
-    public Clients() {
+    public FrmClients() {
         initComponents();
     }
 
@@ -38,6 +38,8 @@ public class Clients extends javax.swing.JInternalFrame {
         txtState = new javax.swing.JTextField();
         cbMechanic = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+
+        setClosable(true);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("Clients Gestion");
@@ -86,7 +88,6 @@ public class Clients extends javax.swing.JInternalFrame {
         });
 
         cbMechanic.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        cbMechanic.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButton1.setText("Agregar Cliente");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
