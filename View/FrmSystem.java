@@ -130,9 +130,9 @@ public class FrmSystem extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnReparationsActionPerformed
     
     private void BtnVehiculosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVehiculosActionPerformed
-       // FrmVehicles newframe= new FrmVehicles();
-//        newframe.setVisible(true);
-//        this.jDesktopPane1.add(newframe);
+        FrmVehicles newframe= new FrmVehicles();
+        newframe.setVisible(true);
+        this.jDesktopPane1.add(newframe);
        
     }//GEN-LAST:event_BtnVehiculosActionPerformed
 
