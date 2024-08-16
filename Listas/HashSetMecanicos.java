@@ -1,7 +1,9 @@
 package Listas;
 
 import Mechanics.Mechanic;
+import RelacionClientes.Client;
 import java.util.HashSet;
+import java.util.Iterator;
 
 public class HashSetMecanicos {
     
@@ -15,4 +17,7 @@ public class HashSetMecanicos {
         mechanics.remove(mechanic);
     }
     
+        public Iterator<Mechanic> iterator(){
+        return mechanics.iterator();
+    }
 }

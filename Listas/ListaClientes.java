@@ -6,6 +6,7 @@ package Listas;
 
 import RelacionClientes.Client;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -36,6 +37,9 @@ public class ListaClientes {
         return null;
     }
     
+    public Iterator<Client> iterator(){
+        return clients.iterator();
+    }
     
     
 }

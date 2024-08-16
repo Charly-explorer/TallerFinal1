@@ -9,51 +9,55 @@ import java.util.Map;
 public class Client {
    private Map<Integer, Client> clientesMap;
    private int ID;
-   private Mechanic mechanic;
-   private LocalDate date;
-   private String description;
-   private boolean state;
-   
-     public Client() {
-        clientesMap = new HashMap<>();
+   private String nombre;
+   private String telefono;
+   private String direccion;
+
+    public Map<Integer, Client> getClientesMap() {
+        return clientesMap;
     }
-    
+
     public int getID() {
-        return ID;  
+        return ID;
     }
 
-    public Mechanic getMechanic() {
-        return mechanic;
+    public String getNombre() {
+        return nombre;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public boolean isState() {
-        return state;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public void setState(boolean state) {
-        this.state = state;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
+   
+ 
 
-    public Client(int ID, Mechanic mechanic, LocalDate date, String description, boolean state) {
+    public Client(int ID, String nombre, String telefono, String direccion) {
         this.ID = ID;
-        this.mechanic = mechanic;
-        this.date = date;
-        this.description = description;
-        this.state = state;
+        this.nombre=nombre;
+        this.telefono=telefono;
+        this.direccion=direccion;
+        
     }
-    
+
     @Override
     public String toString() {
-        return "Cliente{" + "ID=" + ID + ", mechanic=" + mechanic + ", date=" + date + ", description=" + description + ", state=" + state + '}';
+        return "Client{" + "clientesMap=" + clientesMap + ", ID=" + ID + ", nombre=" + nombre + ", telefono=" + telefono + ", direccion=" + direccion + '}';
     }
+    
+  
+  
 
 
     public void addClient(int ID, Client cliente) {

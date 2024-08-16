@@ -19,12 +19,16 @@ public class FrmSystem extends javax.swing.JFrame {
      * Creates new form FrmSistema
      */
     public FrmSystem() {
-        ListaClientes clientes;
-        HashSetMecanicos mecanicos;
-        ArrayListVehicle vehiculos;
-        QueueRepair reparations;
+        
         initComponents();
+                
     }
+    
+    
+    public static Listas getInstance(){
+        
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
