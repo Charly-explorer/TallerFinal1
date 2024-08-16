@@ -163,7 +163,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLicenseActionPerformed"/>
               </Events>
             </Component>
+<<<<<<< HEAD
             <Component class="javax.swing.JTextField" name="txtModel">
+=======
+            <Component class="javax.swing.JTextField" name="jTextField2">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+              </Events>
+>>>>>>> f03f092ccd245534211b5ee1fac65fa7a22f21bf
             </Component>
             <Component class="javax.swing.JTextField" name="txtBrand">
             </Component>
@@ -193,10 +200,19 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+<<<<<<< HEAD
                       <Component id="BtnAdd" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
                       <Component id="BtnRemove" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="244" max="32767" attributes="0"/>
+=======
+                      <Component id="btnAgregar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                      <Component id="btneliminar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+>>>>>>> f03f092ccd245534211b5ee1fac65fa7a22f21bf
                   </Group>
               </Group>
             </DimensionLayout>
@@ -205,8 +221,14 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="41" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
+<<<<<<< HEAD
                           <Component id="BtnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BtnRemove" alignment="3" min="-2" max="-2" attributes="0"/>
+=======
+                          <Component id="btnAgregar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btneliminar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> f03f092ccd245534211b5ee1fac65fa7a22f21bf
                       </Group>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
@@ -214,19 +236,44 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
+<<<<<<< HEAD
             <Component class="javax.swing.JButton" name="BtnAdd">
+=======
+            <Component class="javax.swing.JButton" name="btnAgregar">
+>>>>>>> f03f092ccd245534211b5ee1fac65fa7a22f21bf
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add"/>
               </Properties>
               <Events>
+<<<<<<< HEAD
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnAddActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BtnRemove">
+=======
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btneliminar">
+>>>>>>> f03f092ccd245534211b5ee1fac65fa7a22f21bf
               <Properties>
                 <Property name="text" type="java.lang.String" value="Remove"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btneliminarActionPerformed"/>
+              </Events>
             </Component>
+<<<<<<< HEAD
+=======
+            <Component class="javax.swing.JButton" name="btnBuscar">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Find"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBuscarActionPerformed"/>
+              </Events>
+            </Component>
+>>>>>>> f03f092ccd245534211b5ee1fac65fa7a22f21bf
           </SubComponents>
         </Container>
       </SubComponents>

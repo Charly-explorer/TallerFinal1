@@ -9,12 +9,22 @@ import java.util.Map;
 public class Client {
    private Map<Integer, Client> clientesMap;
    private int ID;
+<<<<<<< HEAD
    private String nombre;
    private String telefono;
    private String direccion;
 
     public Map<Integer, Client> getClientesMap() {
         return clientesMap;
+=======
+   private Mechanic mechanic;
+   private LocalDate date;
+   private String description;
+   private boolean state;
+   
+     public Client(String Id, String Mechanic, String Date, String Description, String State) {
+        clientesMap = new HashMap<>();
+>>>>>>> f03f092ccd245534211b5ee1fac65fa7a22f21bf
     }
 
     public int getID() {
