@@ -63,7 +63,7 @@ public class FrmMechanics extends javax.swing.JInternalFrame {
                         .addComponent(TxtNameMechanic, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(48, 48, 48)
                         .addComponent(jTextField2)))
-                .addContainerGap(396, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

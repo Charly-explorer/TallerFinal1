@@ -5,6 +5,10 @@ import java.time.LocalDate;
 
 
 public class Vehicle {
+
+    public static void EliminarVehiculo(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     private String licensePlate;
     private String model;
     private String brand;
@@ -41,6 +45,14 @@ public class Vehicle {
     @Override
     public String toString() {
         return "Vehicle{" + "licensePlate=" + licensePlate + ", model=" + model + ", brand=" + brand + ", yearOfManufacture=" + yearOfManufacture + '}';
+    }
+
+    public void AgregarVehiculo(Vehicle vehicle) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Vehicle BuscarVehiculo(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     

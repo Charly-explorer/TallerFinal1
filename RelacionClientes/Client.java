@@ -14,7 +14,7 @@ public class Client {
    private String description;
    private boolean state;
    
-     public Client() {
+     public Client(String Id, String Mechanic, String Date, String Description, String State) {
         clientesMap = new HashMap<>();
     }
     

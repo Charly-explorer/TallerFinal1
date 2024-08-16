@@ -4,6 +4,10 @@
  */
 package View;
 
+import Vehicles.Vehicle;
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author thyfa
@@ -39,9 +43,9 @@ public class FrmVehicles extends javax.swing.JInternalFrame {
         jTextField4 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
+        btneliminar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -58,6 +62,12 @@ public class FrmVehicles extends javax.swing.JInternalFrame {
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
             }
         });
 
@@ -110,16 +120,26 @@ public class FrmVehicles extends javax.swing.JInternalFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jButton1.setText("Add");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar.setText("Add");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Remove");
+        btneliminar.setText("Remove");
+        btneliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btneliminarActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Find");
+        btnBuscar.setText("Find");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -127,11 +147,11 @@ public class FrmVehicles extends javax.swing.JInternalFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(68, 68, 68)
-                .addComponent(jButton1)
+                .addComponent(btnAgregar)
                 .addGap(95, 95, 95)
-                .addComponent(jButton2)
+                .addComponent(btneliminar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addComponent(btnBuscar)
                 .addGap(70, 70, 70))
         );
         jPanel3Layout.setVerticalGroup(
@@ -139,9 +159,9 @@ public class FrmVehicles extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(41, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btnAgregar)
+                    .addComponent(btneliminar)
+                    .addComponent(btnBuscar))
                 .addGap(36, 36, 36))
         );
 
@@ -192,15 +212,63 @@ public class FrmVehicles extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+      String licensePlate = this.jTextField1.getText();
+      String model = this.jTextField2.getText();
+      String brand = this.jTextField3.getText();
+    int year = Integer.parseInt(this.jTextField3.getText());
+
+   
+    LocalDate yearOfManufacture = LocalDate.of(year, 1, 1);
+
+    Vehicle vehicle = new Vehicle(licensePlate, model, brand, yearOfManufacture);
+    vehicle.AgregarVehiculo(vehicle);
+
+    
+    this.jTextField1.setText("");
+    this.jTextField2.setText("");
+    this.jTextField3.setText("");
+    this.jTextField4.setText("");
+
+//    / 
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void btneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btneliminarActionPerformed
+       if (!jTextField1.getText().isEmpty()) {
+    Vehicle.EliminarVehiculo(this.jTextField1.getText());
+    this.jTextField1.setText("");
+    } else {
+    JOptionPane.showMessageDialog(null, "La placa no puede estar vacía", "Información incompleta", JOptionPane.WARNING_MESSAGE);
+    }
+
+    }//GEN-LAST:event_btneliminarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+       if (!jTextField1.getText().isEmpty()) {
+     Vehicle vehicle = vehicle.BuscarVehiculo(this.jTextField1.getText());
+    
+    if (vehicle != null) {
+        this.jTextField1.setText(vehicle.getLicensePlate());
+        this.jTextField2.setText(vehicle.getModel());
+        this.jTextField3.setText(vehicle.getBrand());
+        this.jTextField4.setText(String.valueOf(vehicle.getYearOfManufacture().getYear()));
+    } else {
+        JOptionPane.showMessageDialog(null, "Vehículo no encontrado", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+} else {
+    JOptionPane.showMessageDialog(null, "La placa no puede estar vacía", "Información incompleta", JOptionPane.WARNING_MESSAGE);
+}
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btneliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

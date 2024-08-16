@@ -12,6 +12,14 @@ import java.util.ArrayList;
  * @author Student
  */
 public class ListaClientes {
+
+    public static void add(Client cliente) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public static Iterable<Client> getClient() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     ArrayList<Client> clients = new ArrayList<>();
 

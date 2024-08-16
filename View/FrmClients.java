@@ -4,17 +4,24 @@
  */
 package View;
 
+import Listas.ListaClientes;
+import RelacionClientes.Client;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Student
  */
 public class FrmClients extends javax.swing.JInternalFrame {
 
+
     /**
      * Creates new form Clients
      */
+  private ListaClientes list;
     public FrmClients() {
         initComponents();
+   list = new ListaClientes();
     }
 
     /**
@@ -37,7 +44,7 @@ public class FrmClients extends javax.swing.JInternalFrame {
         txtDescription = new javax.swing.JTextField();
         txtState = new javax.swing.JTextField();
         cbMechanic = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        AgregarCliente = new javax.swing.JButton();
 
         setClosable(true);
 
@@ -89,10 +96,10 @@ public class FrmClients extends javax.swing.JInternalFrame {
 
         cbMechanic.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jButton1.setText("Agregar Cliente");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        AgregarCliente.setText("Agregar Cliente");
+        AgregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AgregarClienteActionPerformed(evt);
             }
         });
 
@@ -126,7 +133,7 @@ public class FrmClients extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtState, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jButton1))
+                    .addComponent(AgregarCliente))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -149,7 +156,7 @@ public class FrmClients extends javax.swing.JInternalFrame {
                     .addComponent(cbMechanic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(AgregarCliente)
                 .addGap(85, 85, 85))
         );
 
@@ -172,14 +179,46 @@ public class FrmClients extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStateActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void AgregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarClienteActionPerformed
+         
+   
+       if (!this.txtId.getText().isEmpty() && 
+        this.cbMechanic.getSelectedItem() != null &&
+        !this.txtDate.getText().isEmpty() && 
+        !this.txtDescription.getText().isEmpty() && 
+        !this.txtState.getText().isEmpty()) {
+
+        String id = this.txtId.getText();
+        String mechanic = this.cbMechanic.getSelectedItem().toString();
+        String date = this.txtDate.getText();
+        String description = this.txtDescription.getText();
+        String state = this.txtState.getText();
+
+        Client client = new Client(id, mechanic, date, description, state);
+        
+     
+        list.AddClient(client);
+
+        this.txtId.setText("");
+        this.cbMechanic.setSelectedIndex(-1); 
+        this.txtDate.setText("");
+        this.txtDescription.setText("");
+        this.txtState.setText("");
+
+      
+        this.AgregarCliente.setEnabled(false);
+    } else {
+        JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios", "Información incompleta", JOptionPane.WARNING_MESSAGE);
+    }
+
+       
+             
+    }//GEN-LAST:event_AgregarClienteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AgregarCliente;
     private javax.swing.JComboBox<String> cbMechanic;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
