@@ -31,4 +31,9 @@ public class ArrayListVehicle {
         return vehicles.iterator();
     }
 
+    public ArrayListVehicle() {
+    }
+    
+    
+
 }
